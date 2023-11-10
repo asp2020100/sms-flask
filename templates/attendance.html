@@ -31,10 +31,10 @@ Add Attendance
 <form action="/addattendance" method="post">
 
 <div class="form-group">                          
-<select class="form-control" id="rollno" name="rollno"  required>
-        <option selected>Select RollNo</option>
+<select class="form-control" id="indexno" name="indexno"  required>
+        <option selected>Select indexno</option>
         {% for r in query  %}
-        <option value="{{r.rollno}}">{{r.rollno}}</option>
+        <option value="{{r.indexno}}">{{r.indexno}}</option>
         {% endfor %}
       </select>
  </div>

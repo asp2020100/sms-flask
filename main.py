@@ -26,7 +26,7 @@ def load_user(user_id):
 app.config['SQLALCHEMY_DATABASE_URI']='mysql://smsadmin:smsadmin@140.238.243.244/sms'
 db=SQLAlchemy(app)
 
-# here we will create db models that is tables
+# DB Models
 class Test(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(100))
@@ -38,12 +38,12 @@ class Department(db.Model):
 
 class Attendence(db.Model):
     aid=db.Column(db.Integer,primary_key=True)
-    rollno=db.Column(db.String(100))
+    indexno=db.Column(db.String(100))
     attendance=db.Column(db.Integer())
 
 class Trig(db.Model):
     tid=db.Column(db.Integer,primary_key=True)
-    rollno=db.Column(db.String(100))
+    indexno=db.Column(db.String(100))
     action=db.Column(db.String(100))
     timestamp=db.Column(db.String(100))
 
@@ -60,7 +60,7 @@ class User(UserMixin,db.Model):
 
 class Student(db.Model):
     id=db.Column(db.Integer,primary_key=True)
-    rollno=db.Column(db.String(50))
+    indexno=db.Column(db.String(50))
     sname=db.Column(db.String(50))
     sem=db.Column(db.Integer)
     gender=db.Column(db.String(50))
@@ -105,10 +105,10 @@ def addattendance():
     # query=db.engine.execute(f"SELECT * FROM `student`") 
     query=Student.query.all()
     if request.method=="POST":
-        rollno=request.form.get('rollno')
+        indexno=request.form.get('indexno')
         attend=request.form.get('attend')
-        print(attend,rollno)
-        atte=Attendence(rollno=rollno,attendance=attend)
+        print(attend,indexno)
+        atte=Attendence(indexno=indexno,attendance=attend)
         db.session.add(atte)
         db.session.commit()
         flash("Attendance added","warning")
@@ -119,9 +119,9 @@ def addattendance():
 @app.route('/search',methods=['POST','GET'])
 def search():
     if request.method=="POST":
-        rollno=request.form.get('roll')
-        bio=Student.query.filter_by(rollno=rollno).first()
-        attend=Attendence.query.filter_by(rollno=rollno).first()
+        indexno=request.form.get('roll')
+        bio=Student.query.filter_by(indexno=indexno).first()
+        attend=Attendence.query.filter_by(indexno=indexno).first()
         return render_template('search.html',bio=bio,attend=attend)
         
     return render_template('search.html')
@@ -146,7 +146,7 @@ def delete(id):
 def edit(id):
     # dept=db.engine.execute("SELECT * FROM `department`")    
     if request.method=="POST":
-        rollno=request.form.get('rollno')
+        indexno=request.form.get('indexno')
         sname=request.form.get('sname')
         sem=request.form.get('sem')
         gender=request.form.get('gender')
@@ -154,9 +154,9 @@ def edit(id):
         email=request.form.get('email')
         num=request.form.get('num')
         address=request.form.get('address')
-        # query=db.engine.execute(f"UPDATE `student` SET `rollno`='{rollno}',`sname`='{sname}',`sem`='{sem}',`gender`='{gender}',`branch`='{branch}',`email`='{email}',`number`='{num}',`address`='{address}'")
+        # query=db.engine.execute(f"UPDATE `student` SET `indexno`='{indexno}',`sname`='{sname}',`sem`='{sem}',`gender`='{gender}',`branch`='{branch}',`email`='{email}',`number`='{num}',`address`='{address}'")
         post=Student.query.filter_by(id=id).first()
-        post.rollno=rollno
+        post.indexno=indexno
         post.sname=sname
         post.sem=sem
         post.gender=gender
@@ -229,7 +229,7 @@ def addstudent():
     # dept=db.engine.execute("SELECT * FROM `department`")
     dept=Department.query.all()
     if request.method=="POST":
-        rollno=request.form.get('rollno')
+        indexno=request.form.get('indexno')
         sname=request.form.get('sname')
         sem=request.form.get('sem')
         gender=request.form.get('gender')
@@ -237,8 +237,8 @@ def addstudent():
         email=request.form.get('email')
         num=request.form.get('num')
         address=request.form.get('address')
-        # query=db.engine.execute(f"INSERT INTO `student` (`rollno`,`sname`,`sem`,`gender`,`branch`,`email`,`number`,`address`) VALUES ('{rollno}','{sname}','{sem}','{gender}','{branch}','{email}','{num}','{address}')")
-        query=Student(rollno=rollno,sname=sname,sem=sem,gender=gender,branch=branch,email=email,number=num,address=address)
+        # query=db.engine.execute(f"INSERT INTO `student` (`indexno`,`sname`,`sem`,`gender`,`branch`,`email`,`number`,`address`) VALUES ('{indexno}','{sname}','{sem}','{gender}','{branch}','{email}','{num}','{address}')")
+        query=Student(indexno=indexno,sname=sname,sem=sem,gender=gender,branch=branch,email=email,number=num,address=address)
         db.session.add(query)
         db.session.commit()
 
