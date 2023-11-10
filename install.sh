@@ -16,7 +16,7 @@ sudo apt install python3-venv -y
 # mysqlclient Requrement
 sudo apt-get install python3-dev default-libmysqlclient-dev build-essential pkg-config -y
 # Install Screen 
-sudo apt-get install screen
+sudo apt-get install screen -y
 
 
 # Git Clone 
