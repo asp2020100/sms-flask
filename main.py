@@ -186,7 +186,7 @@ def signup():
 
         # new_user=db.engine.execute(f"INSERT INTO `user` (`username`,`email`,`password`) VALUES ('{username}','{email}','{encpassword}')")
 
-        # this is method 2 to save data in db
+        # Save Data on DB
         newuser=User(username=username,email=email,password=encpassword)
         db.session.add(newuser)
         db.session.commit()
