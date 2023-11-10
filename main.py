@@ -23,7 +23,7 @@ def load_user(user_id):
 
 
 # app.config['SQLALCHEMY_DATABASE_URL']='mysql://username:password@localhost/databas_table_name'
-app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:@localhost/sms'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql://smsadmin:smsadmin@140.238.243.244/sms'
 db=SQLAlchemy(app)
 
 # here we will create db models that is tables
