@@ -1,0 +1,15 @@
+pip install mysqlclient-1.4.6-cp39-cp39-win_amd64.whl
+pip install mysqlclient-1.3.13-cp34-cp34m-win32.whl
+pip install mysqlclient-1.3.13-cp34-cp34m-win_amd64.whl
+pip install mysqlclient-1.4.6-cp27-cp27m-win32.whl
+pip install mysqlclient-1.4.6-cp27-cp27m-win_amd64.whl
+pip install mysqlclient-1.4.6-cp35-cp35m-win32.whl
+pip install mysqlclient-1.4.6-cp35-cp35m-win_amd64.whl
+pip install mysqlclient-1.4.6-cp36-cp36m-win32.whl
+pip install mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl
+pip install mysqlclient-1.4.6-cp37-cp37m-win32.whl
+pip install mysqlclient-1.4.6-cp37-cp37m-win_amd64.whl
+pip install mysqlclient-1.4.6-cp38-cp38-win32.whl
+pip install mysqlclient-1.4.6-cp38-cp38-win_amd64.whl
+pip install mysqlclient-1.4.6-cp39-cp39-win32.whl
+pip install mysqlclient-1.4.6-cp39-cp39-win_amd64.whl
