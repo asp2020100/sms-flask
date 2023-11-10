@@ -21,6 +21,6 @@ Use "sms-flask\mysqlclient\run.bat" for install it.
 
 ## MySQL DB link
 
-Change this line for update DB : https://github.com/asp2020100/sms-flask/blob/61d858a7e5a336f8848d6734821c2f14e023cf16/main.py#L26
+Change this line for update DB : https://github.com/asp2020100/sms-flask/blob/61d858a7e5a336f8848d6734821c2f14e023cf16/main.py#L25
 
 Line format is given above the line of code.
