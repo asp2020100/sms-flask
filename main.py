@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key='4840'
 
 
-# this is for getting unique user access
+# unique user access
 login_manager=LoginManager(app)
 login_manager.login_view='login'
 
@@ -47,16 +47,11 @@ class Trig(db.Model):
     action=db.Column(db.String(100))
     timestamp=db.Column(db.String(100))
 
-
 class User(UserMixin,db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(50))
     email=db.Column(db.String(50),unique=True)
     password=db.Column(db.String(1000))
-
-
-
-
 
 class Student(db.Model):
     id=db.Column(db.Integer,primary_key=True)
