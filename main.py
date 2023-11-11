@@ -114,7 +114,7 @@ def addattendance():
 @app.route('/search',methods=['POST','GET'])
 def search():
     if request.method=="POST":
-        indexno=request.form.get('roll')
+        indexno=request.form.get('index')
         bio=Student.query.filter_by(indexno=indexno).first()
         attend=Attendence.query.filter_by(indexno=indexno).first()
         return render_template('search.html',bio=bio,attend=attend)
