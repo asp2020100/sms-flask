@@ -218,7 +218,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash("Logout SuccessFul","warning")
+    flash("Logout Successful","warning")
     return redirect(url_for('login'))
 
 
